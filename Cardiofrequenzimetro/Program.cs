@@ -3,7 +3,6 @@ const int COSTANTE_CALCOLO1 = 220;
 float sogliaAnaerobica, mediaBpm;
 const float COSTANTE_CALCOLO2 = 0.935f;
 string richiesta = "si";
-bool validita = false;
 
 Console.WriteLine("Inserire l'eta' dell' atleta");
 eta = Convert.ToInt16(Console.ReadLine());
@@ -21,14 +20,9 @@ do
 
             if(bpm <= 0)
             {
-                validita = false;
                 Console.WriteLine("valore non valido, inserire un numero positivo");
             }
-            else
-            {
-                validita = true;
-            }
-        } while (validita == false);
+        } while (bpm <= 0);
 
         if (sogliaAnaerobica < bpm)
         {
