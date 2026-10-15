@@ -1,4 +1,4 @@
-﻿int eta, bpm, totBpm = 0, superamenti = 0, valoreRichiesta = 10;
+﻿int eta, bpm, totBpm = 0, superamenti = 0, valoreRichiesta = 10, qtDati = 0;
 const int COSTANTE_CALCOLO1 = 220;
 float sogliaAnaerobica, mediaBpm;
 const float COSTANTE_CALCOLO2 = 0.935f;
@@ -35,6 +35,8 @@ do
             superamenti++;
         }
         totBpm = totBpm + bpm;
+
+        qtDati++;
     }
 
     Console.WriteLine("vuole continuare a inserire? (se si scrivere ''si'' altrimenti qualcos' altro)");
@@ -56,3 +58,7 @@ do
     }
 
 } while (richiesta == "si");
+
+mediaBpm = totBpm / qtDati;
+
+Console.WriteLine("la media dei bpm e' "+ mediaBpm+ "; la Soglia anaerobica e'" + sogliaAnaerobica +" ed e' stata superata " + superamenti+ " volte");
